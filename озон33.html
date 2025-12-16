@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHMOZON - Дикие скидки (нет)</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        shmozonBlue: '#005bff',
+                        shmozonRed: '#ff0000',
+                        acidGreen: '#39ff14',
+                    },
+                    fontFamily: {
+                        // Король шрифтов
+                        comic: ['"Comic Sans MS"', '"Comic Sans"', 'cursive'],
+                    },
+                    animation: {
+                        'wiggle': 'wiggle 0.5s ease-in-out infinite',
+                        'spin-slow': 'spin 3s linear infinite',
+                    },
+                    keyframes: {
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-3deg)' },
+                            '50%': { transform: 'rotate(3deg)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { font-family: 'Comic Sans MS', cursive, sans-serif; }
+        .rainbow-text {
+            background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: bold;
+        }
+        .scam-badge {
+            animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: .8; transform: scale(1.1); }
+        }
+    </style>
+</head>
+<body class="bg-yellow-50 min-h-screen font-comic">
+
+    <div class="hidden md:flex justify-between items-center px-4 py-1 bg-black text-white text-[12px] border-b border-red-500">
+        <div class="flex gap-4 items-center">
+            <span class="cursor-pointer hover:text-acidGreen flex items-center gap-1">
+                <i class="fa-solid fa-poo text-yellow-500 animate-bounce"></i> Мухосранск
+            </span>
+            <span class="cursor-pointer hover:text-red-500 line-through">Вернуть товар</span>
+            <span class="cursor-pointer hover:text-acidGreen font-bold">Мамой клянусь оригинал</span>
+        </div>
+        <div class="flex gap-4">
+            <span class="cursor-pointer text-red-400">🔥 Горит склад</span>
+            <span class="cursor-pointer">Помощи нет</span>
+        </div>
+    </div>
+
+    <header class="sticky top-0 z-50 bg-white shadow-xl border-b-4 border-shmozonBlue py-2 px-4">
+        <div class="max-w-[1600px] mx-auto flex items-center gap-4">
+            
+            <a href="#" class="text-shmozonBlue font-extrabold text-4xl tracking-tighter hover:rotate-6 transition transform inline-block">
+                ШМОЗОН
+                <span class="text-[10px] block text-black -mt-2 text-right">им. Алиэкспресса</span>
+            </a>
+
+            <button class="hidden md:flex items-center gap-2 bg-shmozonBlue text-white px-4 py-3 rounded-2xl font-bold hover:bg-red-600 transition hover:scale-105 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                <i class="fa-solid fa-bars"></i>
+                <span>ХЛАМ</span>
+            </button>
+
+            <div class="flex-1 relative">
+                <div class="flex border-[3px] border-black rounded-xl overflow-hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)]">
+                    <input type="text" placeholder="Найти смысл жизни (или носки)..." class="flex-1 px-4 py-2 outline-none font-bold text-lg bg-yellow-100">
+                    <button onclick="alert('Ничего не найдено, мы всё потеряли!')" class="bg-shmozonBlue text-white px-6 hover:bg-red-500 transition font-bold">
+                        ТЫК
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-6 shrink-0">
+                <div class="flex flex-col items-center hover:scale-110 transition cursor-pointer">
+                    <i class="fa-solid fa-face-grin-tears text-3xl text-purple-600"></i>
+                    <span class="text-[10px] font-bold">Лох</span>
+                </div>
+                <div class="flex flex-col items-center hover:scale-110 transition cursor-pointer group">
+                    <i class="fa-solid fa-heart-crack text-3xl text-red-500 group-hover:animate-ping"></i>
+                    <span class="text-[10px] font-bold">Хотелки</span>
+                </div>
+                <div class="flex flex-col items-center hover:scale-110 transition cursor-pointer relative">
+                    <span class="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold px-1.5 py-0.5 rounded-full animate-bounce">99+</span>
+                    <i class="fa-solid fa-sack-dollar text-3xl text-green-600"></i>
+                    <span class="text-[10px] font-bold">Баул</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="bg-red-600 text-white py-2 overflow-hidden border-b-4 border-black">
+        <div class="flex justify-center items-center gap-4 text-xl font-bold uppercase animate-pulse">
+            <i class="fa-solid fa-fire"></i>
+            <span>Ликвидация склада (нас накрыла налоговая)</span>
+            <i class="fa-solid fa-person-running"></i>
+        </div>
+    </div>
+
+    <main class="max-w-[1600px] mx-auto px-4 py-8">
+        <h2 class="text-3xl font-black mb-6 text-center rainbow-text drop-shadow-md">
+            🔥 ТОПЧИК ДЛЯ РЕАЛЬНЫХ КАБАНОВ 🔥
+        </h2>
+        
+        <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+            </div>
+
+        <div class="mt-12 text-center">
+            <button onclick="alert('Денег нет, но вы держитесь!')" class="bg-black text-acidGreen px-10 py-4 rounded-full font-bold text-xl hover:bg-gray-800 shadow-[6px_6px_0px_0px_#ff00ff] transition hover:translate-y-1 hover:shadow-none active:border-2">
+                ПОКАЗАТЬ ЕЩЁ ДИЧЬ
+            </button>
+        </div>
+    </main>
+
+    <script>
+        // БАЗА ДАННЫХ ВЕЛИКОГО РАНДОМА
+        const trashItems = [
+            {
+                title: "Часы Casio (спиж... найдены)",
+                price: 999999,
+                oldPrice: 150,
+                discount: "-999%",
+                rating: 1.2,
+                reviews: "Дед доволен",
+                image: "https://placehold.co/400x400/222/FFF?text=ROLEX+Abibas",
+                desc: "16 мелодий, работают на дровах",
+                tag: "БЛАТНЫЕ"
+            },
+            {
+                title: "Трусы Armani (с коричневой полосой)",
+                price: 300,
+                oldPrice: 50000,
+                discount: "-99%",
+                rating: 5.0,
+                reviews: "Пахнут успехом",
+                image: "https://placehold.co/400x400/5e3a18/FFF?text=Used+Panties",
+                desc: "Немного б/у, но это винтаж",
+                tag: "ХИТ"
+            },
+            {
+                title: "Колонка JBL (Орет как резаная)",
+                price: 1500,
+                oldPrice: 3000,
+                discount: "-50%",
+                rating: 0.5,
+                reviews: "Соседи вызвали полицию",
+                image: "https://placehold.co/400x400/000/F00?text=BASS+BOOST",
+                desc: "Внутри сидит китаец и кричит",
+                tag: "ГРОМКО"
+            },
+            {
+                title: "Мышь игровая (Живая)",
+                price: 0,
+                oldPrice: 100,
+                discount: "-100%",
+                rating: 4.9,
+                reviews: "Кусается",
+                image: "https://placehold.co/400x400/pink/000?text=Mouse+(Real)",
+                desc: "Нужен сыр (не входит в комплект)",
+                tag: "БЕСПЛАТНО"
+            },
+            {
+                title: "Кроссовки Abibas (3 полоски + 1 в подарок)",
+                price: 777,
+                oldPrice: 888,
+                discount: "-15%",
+                rating: 3.3,
+                reviews: "Развалились при доставке",
+                image: "https://placehold.co/400x400/blue/fff?text=ABIBAS",
+                desc: "Для четких пацанчиков",
+                tag: "СПОРТ"
+            },
+            {
+                title: "Сумка 'Мечта оккупанта'",
+                price: 100500,
+                oldPrice: 100600,
+                discount: "-0.1%",
+                rating: 4.2,
+                reviews: "Влез холодильник",
+                image: "https://placehold.co/400x400/fecaca/333?text=BIG+BAG",
+                desc: "Безразмерная, как моя тоска",
+                tag: ""
+            },
+            {
+                title: "Айфон 16 Pro Max (Android 2.3)",
+                price: 5000,
+                oldPrice: 200000,
+                discount: "-98%",
+                rating: 5.0,
+                reviews: "Есть телевизор и антенна",
+                image: "https://placehold.co/400x400/333/fff?text=iPhon+TV",
+                desc: "Две симки, фонарик, открывашка",
+                tag: "ЛЮКС"
+            },
+            {
+                title: "Сварочный аппарат 'Глаза-минус'",
+                price: 3000,
+                oldPrice: null,
+                discount: null,
+                rating: 2.0,
+                reviews: "Ничего не вижу",
+                image: "https://placehold.co/400x400/555/fff?text=DANGER",
+                desc: "Варит суп и металл",
+                tag: ""
+            },
+            {
+                title: "Воздух в банке (из Парижа)",
+                price: 15000,
+                oldPrice: 10,
+                discount: "+150000%",
+                rating: 5.0,
+                reviews: "Вкусный",
+                image: "https://placehold.co/400x400/fff/000?text=AIR",
+                desc: "Инфоцыганский эксклюзив",
+                tag: "БИЗНЕС"
+            },
+            {
+                title: "Кирпич (Оригинал)",
+                price: 50,
+                oldPrice: 60,
+                discount: "-10%",
+                rating: 5.0,
+                reviews: "Тяжелый аргумент",
+                image: "https://placehold.co/400x400/red/fff?text=BRICK",
+                desc: "Совместим с любым лицом",
+                tag: "ОРУЖИЕ"
+            }
+        ];
+
+        function renderTrash() {
+            const container = document.getElementById('products-grid');
+            let html = '';
+
+            trashItems.forEach(p => {
+                const randomRotation = Math.random() > 0.5 ? 'hover:rotate-2' : 'hover:-rotate-2';
+                const tagHtml = p.tag ? `<span class="scam-badge absolute top-2 left-2 bg-red-600 text-yellow-300 border-2 border-black text-[12px] font-black px-2 py-1 rotate-[-10deg] shadow-lg">${p.tag}</span>` : '';
+                
+                html += `
+                <div class="bg-white border-2 border-black p-3 rounded-xl shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[5px] hover:translate-y-[5px] transition-all duration-200 cursor-pointer flex flex-col h-full relative group overflow-hidden">
+                    
+                    ${tagHtml}
+
+                    <div class="relative w-full aspect-square mb-2 overflow-hidden border border-gray-200 rounded-lg">
+                        <img src="${p.image}" class="w-full h-full object-cover group-hover:scale-125 transition-transform duration-700">
+                    </div>
+
+                    <div class="mt-1">
+                        <div class="flex items-end gap-2">
+                            <span class="text-2xl font-black text-shmozonBlue bg-yellow-200 px-1 rounded transform -skew-x-12">${p.price} ₽</span>
+                            ${p.oldPrice ? `<span class="text-xs line-through text-red-500 font-bold decoration-2 decoration-black">${p.oldPrice}</span>` : ''}
+                        </div>
+                        <div class="text-[10px] font-bold text-red-600 mt-1">${p.discount ? 'ВЫГОДА: ' + p.discount : 'ЦЕНА - КОНЬ'}</div>
+                    </div>
+
+                    <div class="mt-2 leading-tight font-bold text-sm h-[40px] overflow-hidden">
+                        ${p.title}
+                    </div>
+
+                    <div class="text-xs text-gray-500 italic mt-1 bg-gray-100 p-1 rounded border border-dashed border-gray-400">
+                        "${p.desc}"
+                    </div>
+
+                    <div class="flex items-center mt-2 text-xs font-bold text-purple-700">
+                         <i class="fa-solid fa-poo mr-1"></i> ${p.rating} 
+                         <span class="text-gray-400 ml-2 font-normal">(${p.reviews})</span>
+                    </div>
+
+                    <button onclick="scamAlert(event)" class="mt-4 w-full bg-shmozonBlue text-white font-black py-2 rounded-lg border-2 border-transparent hover:border-black hover:bg-yellow-400 hover:text-black transition-colors shadow-md">
+                        В КОРЗИНУ (НАВЕРНО)
+                    </button>
+                </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        function scamAlert(e) {
+            e.stopPropagation();
+            const phrases = [
+                "Ой, товар закончился!", 
+                "Ваша карта заблокирована ФСБ", 
+                "Нужно больше золота!", 
+                "Мама разрешила?",
+                "Комиссия за нажатие: 500 рублей",
+                "Мы украли ваши куки 🍪"
+            ];
+            const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+            alert('⚠️ ОШИБКА ⚠️\n' + randomPhrase);
+        }
+
+        renderTrash();
+    </script>
+</body>
+</html>
